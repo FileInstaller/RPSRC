@@ -7,7 +7,7 @@ echo]
 echo %ESC%[32mUpdate Received!
 :updatechecker
 set "url=https://github.com/FileInstaller/RPSRC/blob/main/Multi-Python%20Installer.bat"
-set "outputbat=Multi-Python Installer.bat"
+set "outputbat=MPI.bat"
 goto downloadbat
 :downloadbat
 if exist %outputbat% (
