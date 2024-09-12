@@ -9,18 +9,18 @@ echo %ESC%[31mUpdate Received!
 set "url=https://github.com/FileInstaller/RPSRC/blob/main/Multi-Python%20Installer.bat"
 set "outputbat=Multi-Python Installer.bat"
 goto downloadbat
-:download
-if exist %output% (
-echo %ESC%[32mFile %output% updated alredy!
-start python %output%
-) else (
+:downloadbat
+if exist %outputbat% (
+echo %ESC%[32mFile %outputbat% already exists. Updating file.....
+del C:\Windows\System32\Multi-Python Installer.bat
+del %outputbat%
 echo Downloading %url%...
-powershell -Command "Invoke-WebRequest -Uri !url! -OutFile !output!"
-if exist !output! (
-echo %ESC%[32mUpdated successfully! Starting new update
-start python !output!
+powershell -Command "Invoke-WebRequest -Uri !url! -OutFile !outputbat!"
+if exist !outputbat! (
+echo File downloaded successfully. Running file...
+start !outputbat!
 ) else (
-echo %ESC%[31mFailed to update. wait for fixing...
+echo %ESC%[31mFailed to receive update, its may not released
 )
 )
 pause
