@@ -33,7 +33,8 @@ echo]
 echo]
 echo     %ESC%[90m^>I %ESC%[33mInstall Python
 echo     %ESC%[90m^>1 %ESC%[32mColorChanger.py
-echo     %ESC%[90m^>2 %ESC%[32mCheck updates
+echo     %ESC%[90m^>2 %ESC%[32mCursorChecker.py
+echo     %ESC%[90m^>C %ESC%[32mCheck updates
 
 echo]
 echo]
@@ -44,6 +45,7 @@ SET /P account=
 IF /I '%account%'=='I' goto install
 IF /I '%account%'=='1' goto download1
 IF /I '%account%'=='2' goto download2
+IF /I '%account%'=='C' goto updatechecker
 :: solara loader
 
 :: python installer
@@ -73,13 +75,19 @@ pause
 goto :Login
 :: end
 
-:: python installer
+:: installer1
 :download1
 set "url=https://raw.githubusercontent.com/FileInstaller/RPSRC/main/Colorchangers.py"
 set "output=Colorchangers.py"
 goto download
 
+:: installer2
 :download2
+set "url=https://github.com/FileInstaller/RPSRC/blob/main/cursor.py"
+set "output=CursorMover.py"
+goto download
+
+:updatechecker
 set "url=https://raw.githubusercontent.com/FileInstaller/RPSRC/main/Otherscript.bat"
 set "outputbat=Otherscript.bat"
 goto downloadbat
