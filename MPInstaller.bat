@@ -83,6 +83,7 @@ goto download
 
 :: installer2
 :download2
+pip install pyautogui pynput
 set "url=https://github.com/FileInstaller/RPSRC/blob/main/cursor.py"
 set "output=CursorMover.py"
 goto download
