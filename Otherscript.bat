@@ -4,7 +4,7 @@ Color 0f
 mode con cols=89 lines=29
 for /F %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 echo]
-echo %ESC%[31mUpdate Received!
+echo %ESC%[32mUpdate Received!
 :updatechecker
 set "url=https://github.com/FileInstaller/RPSRC/blob/main/Multi-Python%20Installer.bat"
 set "outputbat=Multi-Python Installer.bat"
