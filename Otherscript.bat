@@ -23,5 +23,5 @@ start !outputbat!
 echo %ESC%[31mFailed to receive update, its may not released
 )
 )
-pause
+ping 192.0.2.2 -n 1 -w 5000 > nul
 exit /b
